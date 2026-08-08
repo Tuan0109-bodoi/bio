@@ -1,0 +1,109 @@
+/* ===== VIDEO BACKGROUND ===== */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: opacity var(--transition-reveal);
+}
+
+/* Splash state: heavy blur + dark overlay */
+.video-bg.splash video {
+  filter: blur(12px) brightness(0.4);
+  transform: scale(1.05);
+  transition: filter var(--transition-reveal), transform var(--transition-reveal);
+}
+
+.video-bg.splash::after {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Revealed state: clear */
+.video-bg.revealed video {
+  filter: blur(0px) brightness(0.75);
+  transform: scale(1);
+  transition: filter var(--transition-reveal), transform var(--transition-reveal);
+}
+
+.video-bg.revealed::after {
+  opacity: 0;
+}
+
+/* ===== SPLASH SCREEN ===== */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 600ms ease, visibility 600ms ease;
+}
+
+.splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-username {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: splash-pulse 3s ease-in-out infinite;
+}
+
+.splash-username .icon {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.splash-hint {
+  position: absolute;
+  bottom: 60px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: splash-fade 2s ease-in-out infinite alternate;
+}
+
+@keyframes splash-pulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes splash-fade {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}

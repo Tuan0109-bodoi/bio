@@ -1,0 +1,105 @@
+/* ===== TILT GLOW CARD ===== */
+.tilt-glow-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  transition: transform 200ms ease-out;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Animated rotating border glow */
+.glow-border {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--glow-angle, 0deg),
+    transparent 0%,
+    rgba(232, 160, 191, 0.05) 10%,
+    rgba(232, 160, 191, 0.4) 20%,
+    rgba(200, 170, 255, 0.5) 30%,
+    rgba(232, 160, 191, 0.4) 40%,
+    rgba(232, 160, 191, 0.05) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+  animation: glow-spin 4s linear infinite;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.tilt-glow-card:hover .glow-border {
+  opacity: 1;
+}
+
+/* Outer soft glow halo */
+.tilt-glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--glow-angle, 0deg),
+    transparent 0%,
+    rgba(232, 160, 191, 0) 10%,
+    rgba(232, 160, 191, 0.15) 20%,
+    rgba(200, 170, 255, 0.2) 30%,
+    rgba(232, 160, 191, 0.15) 40%,
+    rgba(232, 160, 191, 0) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 0;
+  animation: glow-spin 4s linear infinite;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.tilt-glow-card:hover::before {
+  opacity: 1;
+}
+
+/* Cursor-following inner glow */
+.glow-follow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+  transition: opacity 300ms ease;
+  mix-blend-mode: soft-light;
+}
+
+/* Card content sits above glow layers */
+.tilt-glow-content {
+  position: relative;
+  z-index: 3;
+  border-radius: inherit;
+}
+
+@keyframes glow-spin {
+  from {
+    --glow-angle: 0deg;
+  }
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+/* Register custom property for animation */
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}

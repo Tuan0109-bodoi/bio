@@ -1,0 +1,250 @@
+/* ===== MAIN LAYOUT ===== */
+.main-layout {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition:
+    opacity var(--transition-reveal),
+    transform var(--transition-reveal);
+  pointer-events: none;
+}
+
+.main-layout.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.profile-card-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.player-bar-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.profile-card {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 20px;
+  position: relative;
+}
+
+/* Subtle inner glow */
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(232, 160, 191, 0.06) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* ===== AVATAR SECTION ===== */
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-pink), rgba(160, 140, 232, 0.5));
+  opacity: 0.3;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.profile-name .hearts {
+  font-size: 0.9rem;
+  margin-left: 4px;
+}
+
+.profile-bio {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ===== FRIENDS SECTION ===== */
+.friends-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background var(--transition-fast);
+}
+
+.friend-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.friend-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.friend-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.friend-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.friend-status {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.friend-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.friend-stats {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.view-profile-btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  background: var(--accent-pink);
+  color: #1a1a2e;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.view-profile-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding: 8px 0;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--accent-pink);
+  font-size: 1.1rem;
+  transition: 
+    transform var(--transition-fast), 
+    color var(--transition-fast),
+    background var(--transition-fast);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: #fff;
+  background: rgba(232, 160, 191, 0.15);
+  border-color: rgba(232, 160, 191, 0.3);
+}
+
+/* ===== PROFILE FOOTER ===== */
+.profile-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+}
+
+.view-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
