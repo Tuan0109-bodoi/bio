@@ -54,7 +54,7 @@ export default function MusicPlayer({ audioRef, isPlaying, togglePlay }) {
         <img
           className="player-cover"
           src="/assets/anh_chinh.jpg"
-          alt="REVENGE (Super Slowed)"
+          alt="Baby Doll"
           onError={(e) => {
             e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill="%231a1a2e" width="48" height="48" rx="8"/><text x="24" y="28" text-anchor="middle" fill="%23666" font-size="10">♫</text></svg>';
           }}
@@ -62,7 +62,7 @@ export default function MusicPlayer({ audioRef, isPlaying, togglePlay }) {
 
         <div className="player-info">
           <div className="player-title">
-            REVENGE ( Super Slowed ) - LHX
+            Baby Doll
           </div>
           <div className="player-progress-wrapper">
             <span className="player-time">{formatTime(currentTime)}</span>

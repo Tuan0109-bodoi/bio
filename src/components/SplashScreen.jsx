@@ -6,7 +6,7 @@ export default function SplashScreen({ isHidden, onEnter }) {
     >
       <div className="splash-username">
         <span className="icon">✦</span>
-        <span>XiiO2</span>
+        <span>Jessica</span>
         <span className="icon">⚙</span>
       </div>
       <div className="splash-hint">Click anywhere to enter</div>

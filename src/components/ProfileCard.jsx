@@ -33,15 +33,15 @@ export default function ProfileCard() {
             <img
               className="avatar"
               src="/assets/anh_chinh.jpg"
-              alt="Thư Minh"
+              alt="Jessica"
               onError={(e) => {
-                e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><rect fill="%231a1a2e" width="80" height="80"/><text x="40" y="45" text-anchor="middle" fill="%23e8a0bf" font-size="24">TM</text></svg>';
+                e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><rect fill="%231a1a2e" width="80" height="80"/><text x="40" y="45" text-anchor="middle" fill="%23e8a0bf" font-size="24">JS</text></svg>';
               }}
             />
           </div>
           <div className="profile-info">
             <h1 className="profile-name">
-              Thư Minh
+              Jessica
               <span className="hearts">💜 🌟</span>
             </h1>
             <p className="profile-bio">
