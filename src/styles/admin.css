@@ -1,0 +1,171 @@
+.admin-page {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  background: #0f0f14;
+  font-family: 'Outfit', sans-serif;
+  color: #f0f0f5;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 320px;
+  align-self: center;
+  background: #1a1a24;
+  border: 1px solid #2a2a38;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-login-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #b0b0c0;
+}
+
+.admin-login-card input {
+  background: #0f0f14;
+  border: 1px solid #2a2a38;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #f0f0f5;
+  font-size: 14px;
+}
+
+.admin-login-card button {
+  background: #8a6bd6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-container {
+  width: 100%;
+  max-width: 720px;
+}
+
+.admin-container h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.admin-container h2 {
+  font-size: 15px;
+  color: #b0b0c0;
+  margin: 24px 0 12px;
+}
+
+.admin-hint {
+  font-size: 13px;
+  color: #7a7a8a;
+}
+
+.admin-error {
+  color: #ff6b6b;
+  font-size: 13px;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a24;
+  border: 1px solid #2a2a38;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.admin-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.admin-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.admin-username {
+  font-weight: 400;
+  color: #7a7a8a;
+  font-size: 12px;
+}
+
+.admin-bio {
+  font-size: 12px;
+  color: #b0b0c0;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-status {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.admin-status-approved {
+  background: rgba(80, 200, 120, 0.15);
+  color: #50c878;
+}
+
+.admin-status-rejected {
+  background: rgba(255, 107, 107, 0.15);
+  color: #ff6b6b;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.approve-btn,
+.reject-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.approve-btn {
+  background: #50c878;
+  color: #06210f;
+}
+
+.reject-btn {
+  background: transparent;
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+}

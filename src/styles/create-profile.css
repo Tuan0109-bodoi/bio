@@ -1,0 +1,175 @@
+.create-page {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+  background: #0f0f14;
+  font-family: 'Outfit', sans-serif;
+  color: #f0f0f5;
+}
+
+.create-card {
+  width: 100%;
+  max-width: 420px;
+  background: #1a1a24;
+  border: 1px solid #2a2a38;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-card h1 {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.create-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #b0b0c0;
+}
+
+.create-card input,
+.create-card textarea,
+.create-card select {
+  background: #0f0f14;
+  border: 1px solid #2a2a38;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #f0f0f5;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.create-card input:focus,
+.create-card textarea:focus,
+.create-card select:focus {
+  outline: none;
+  border-color: #8a6bd6;
+}
+
+.create-card input[type='file'] {
+  padding: 6px 0;
+  border: none;
+  background: none;
+}
+
+.create-hint {
+  font-size: 12px;
+  color: #7a7a8a;
+}
+
+.social-link-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.social-link-row select {
+  flex: 0 0 110px;
+}
+
+.social-link-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.remove-link-btn {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid #2a2a38;
+  border-radius: 6px;
+  color: #b0b0c0;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-link-btn:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.add-link-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px dashed #4a4a5a;
+  border-radius: 8px;
+  color: #b0a0e0;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.add-link-btn:hover {
+  border-color: #8a6bd6;
+  color: #8a6bd6;
+}
+
+.audio-source-toggle {
+  display: flex;
+  gap: 16px;
+}
+
+.radio-option {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+  cursor: pointer;
+}
+
+.radio-option input[type='radio'] {
+  width: auto;
+}
+
+.create-card fieldset {
+  border: 1px solid #2a2a38;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.create-card fieldset legend {
+  padding: 0 6px;
+  font-size: 12px;
+  color: #b0b0c0;
+}
+
+.create-card button {
+  background: #8a6bd6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.create-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.create-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #8a6bd6;
+  word-break: break-all;
+}

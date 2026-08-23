@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/splash.css';
 
-export default function VideoBackground({ isRevealed, videoRef }) {
+export default function VideoBackground({ isRevealed, videoRef, videoSrc = '/assets/video.mp4' }) {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -35,7 +35,7 @@ export default function VideoBackground({ isRevealed, videoRef }) {
         loop
         playsInline
       >
-        <source src="/assets/video.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
       </video>
     </div>
   );

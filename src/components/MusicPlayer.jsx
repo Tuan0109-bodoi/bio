@@ -9,7 +9,7 @@ import '../styles/music-player.css';
 import '../styles/tilt-glow.css';
 import TiltGlowCard from './TiltGlowCard';
 
-export default function MusicPlayer({ audioRef, isPlaying, togglePlay }) {
+export default function MusicPlayer({ audioRef, isPlaying, togglePlay, coverUrl, songTitle }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(121); // 2:01 default
 
@@ -53,8 +53,8 @@ export default function MusicPlayer({ audioRef, isPlaying, togglePlay }) {
         <div className="player-bar glass">
         <img
           className="player-cover"
-          src="/assets/anh_chinh.jpg"
-          alt="Baby Doll"
+          src={coverUrl}
+          alt={songTitle}
           onError={(e) => {
             e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill="%231a1a2e" width="48" height="48" rx="8"/><text x="24" y="28" text-anchor="middle" fill="%23666" font-size="10">♫</text></svg>';
           }}
@@ -62,7 +62,7 @@ export default function MusicPlayer({ audioRef, isPlaying, togglePlay }) {
 
         <div className="player-info">
           <div className="player-title">
-            Baby Doll
+            {songTitle}
           </div>
           <div className="player-progress-wrapper">
             <span className="player-time">{formatTime(currentTime)}</span>

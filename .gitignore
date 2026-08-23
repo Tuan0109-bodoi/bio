@@ -1,6 +1,7 @@
 node_modules
 .agents
 .gemini
+.claude
 dist
 .env
 .env.local
