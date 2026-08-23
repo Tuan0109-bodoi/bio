@@ -64,6 +64,7 @@ export default function AdminPage() {
               type="password"
               value={passwordInput}
               onChange={(e) => setPasswordInput(e.target.value)}
+              autoComplete="new-password"
               autoFocus
             />
           </label>
