@@ -41,9 +41,12 @@ export default function App() {
       setProfile(data);
       setLoadStatus('found');
 
-      const { data: newCount } = await supabase.rpc('increment_view_count', {
+      const { data: newCount, error: rpcError } = await supabase.rpc('increment_view_count', {
         p_username: username,
       });
+      if (rpcError) {
+        console.error('increment_view_count failed:', rpcError);
+      }
       if (!cancelled && typeof newCount === 'number') {
         setProfile((prev) => (prev ? { ...prev, view_count: newCount } : prev));
       }
